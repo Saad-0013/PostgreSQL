@@ -30,6 +30,16 @@ Printing multiple items
 SELECT name, city, country FROM people;
 ```
 
+## The DISTINCT keyword
+
+```SQL
+SELECT DISTINCT language from world;
+```
+## The COUNT keyword
+
+```SQL
+SELECT COUNT(*) from people;
+```
 ## The AS keyword
 
 1. The AS keyword can be used to create an alias of the table that will only exist for the duration of the querry.
