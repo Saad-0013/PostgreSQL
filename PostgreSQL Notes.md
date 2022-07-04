@@ -42,5 +42,15 @@ SELECT CUSTOMER_NAME AS [CUSTOMER NAME]
 FROM Table_Name;
 ```
 
+# Notes about SQL
+
+1. SQL stand for Structured Query Language 
+2. It is used for interacting with data stored in a relational database
+    - You can think of a relational database as a collection of tables 
+        - A table is a set of rows and columns
+            - Each Row is called a record of the table
+            - Each column is called a field of the table 
+            
+
 
 
