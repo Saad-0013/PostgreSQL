@@ -24,6 +24,12 @@ CREATE DATABASE database_name;
 SELECT attribute_name FROM table_name;
 ```
 
+Printing multiple items
+
+```SQL
+SELECT name, city, country FROM people;
+```
+
 ## The AS keyword
 
 1. The AS keyword can be used to create an alias of the table that will only exist for the duration of the querry.
@@ -41,6 +47,14 @@ If the alias name contains a space then we use the square bracket
 SELECT CUSTOMER_NAME AS [CUSTOMER NAME]
 FROM Table_Name;
 ```
+## The Limit keyword
+
+Limiting the size of the output column 
+```SQL
+SELECT name FROM people LIMIT 10;
+```
+
+
 
 # Notes about SQL
 
@@ -50,7 +64,15 @@ FROM Table_Name;
         - A table is a set of rows and columns
             - Each Row is called a record of the table
             - Each column is called a field of the table 
-            
-
+3. Keywords in SQL are not case sensitive
+```SQL
+SELECT name 
+from table_name;
+```
+can also be written as
+```SQL
+select name
+from table_name;
+```
 
 
