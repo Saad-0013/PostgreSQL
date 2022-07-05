@@ -114,8 +114,8 @@ WHERE (release_year = 1994 OR release_year = 1995)
 AND (certification = 'PG' OR certification = 'R');
 ```  
 
+  
 # Notes about SQL  
-
 
 1. SQL stand for Structured Query Language 
 2. It is used for interacting with data stored in a relational database
