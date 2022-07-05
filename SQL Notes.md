@@ -82,6 +82,38 @@ In SQL, the WHERE keyword allows you to filter based on both text and numeric va
 <= less than or equal to <br>
 \>= greater than or equal to <br>
 
+## The AND keyword
+
+The AND keyword is used with the WHERE keyword, where multiple conditions are required to filter the output
+
+```SQL
+SELECT title, release_year
+FROM films
+WHERE language = 'Spanish' 
+AND release_year < 2000;
+```
+
+## The OR keyword
+
+The OR keyword is also used with the WHERE keyword and is used to filter the output by using it to specify the filtering conditions.
+> Note: You need to specify the column name for every OR condition
+
+```SQL
+SELECT title
+FROM films
+WHERE release_year = 1994
+OR release_year = 2000;
+```
+
+When combining AND and OR be sure to use parentheses to make the conditions more readable like done below.
+
+```SQL
+SELECT title
+FROM films
+WHERE (release_year = 1994 OR release_year = 1995)
+AND (certification = 'PG' OR certification = 'R');
+```
+
 # Notes about SQL
 
 1. SQL stand for Structured Query Language 
@@ -91,6 +123,7 @@ In SQL, the WHERE keyword allows you to filter based on both text and numeric va
             - Each Row is called a record of the table
             - Each column is called a field of the table 
 3. Keywords in SQL are not case sensitive
+
 ```SQL
 SELECT name 
 from table_name;
