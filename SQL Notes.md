@@ -114,7 +114,49 @@ WHERE (release_year = 1994 OR release_year = 1995)
 AND (certification = 'PG' OR certification = 'R');
 ```  
 
-  
+### Example # 2
+
+```SQL
+SELECT title, release_year
+FROM films
+WHERE (release_year BETWEEN 1990 AND 2000)
+AND (budget > 100000000)
+AND (language = 'Spanish' OR language = 'French');
+```
+
+## The BETWEEN keyword
+
+We can change multiple conditional statements to single statements using the BETWEEN keyword. 
+BETWEEN is used to filter values in a specified range. 
+For Example
+
+```SQL
+SELECT title
+FROM films
+WHERE release_year >= 1994
+AND release_year <= 2000;
+```
+
+Can be written as 
+
+```SQL
+SELECT title
+FROM films
+WHERE release_year
+BETWEEN 1994 AND 2000;
+```
+
+## The WHERE IN keyboard
+
+If we want to specify a discontinuous range such as [1,2,5,7,8] we can use the IN keyword.
+
+```SQL
+SELECT name 
+FROM table
+WHERE age in (2,4,6,14,20);
+```
+
+
 # Notes about SQL  
 
 1. SQL stand for Structured Query Language 
