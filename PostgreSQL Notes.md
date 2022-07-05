@@ -78,10 +78,10 @@ In SQL, the WHERE keyword allows you to filter based on both text and numeric va
 = equal <br>
 <> not equal <br>
 < less than <br>
-/> greater than <br>
+\> greater than <br>
 <= less than or equal to <br>
-/>= greater than or equal to <br>
-
+\>= greater than or equal to <br>
+> something
 # Notes about SQL
 
 1. SQL stand for Structured Query Language 
