@@ -40,6 +40,7 @@ SELECT DISTINCT language from world;
 ```SQL
 SELECT COUNT(*) from people;
 ```
+
 ## The AS keyword
 
 1. The AS keyword can be used to create an alias of the table that will only exist for the duration of the querry.
@@ -64,7 +65,22 @@ Limiting the size of the output column
 SELECT name FROM people LIMIT 10;
 ```
 
+## Using COUNT and DISTINCT together
 
+```SQL
+SELECT COUNT(DISTINCT language) FROM films;
+```
+
+## The WHERE keyword
+
+In SQL, the WHERE keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
+
+= equal
+<> not equal
+< less than
+/> greater than
+<= less than or equal to
+/>= greater than or equal to
 
 # Notes about SQL
 
