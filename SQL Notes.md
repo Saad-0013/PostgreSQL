@@ -112,7 +112,7 @@ SELECT title
 FROM films
 WHERE (release_year = 1994 OR release_year = 1995)
 AND (certification = 'PG' OR certification = 'R');
-```
+```  
 
 # Notes about SQL
 
