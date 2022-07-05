@@ -75,12 +75,12 @@ SELECT COUNT(DISTINCT language) FROM films;
 
 In SQL, the WHERE keyword allows you to filter based on both text and numeric values in a table. There are a few different comparison operators you can use:
 
-= equal
-<> not equal
-< less than
-/> greater than
-<= less than or equal to
-/>= greater than or equal to
+= equal <br>
+<> not equal <br>
+< less than <br>
+/> greater than <br>
+<= less than or equal to <br>
+/>= greater than or equal to <br>
 
 # Notes about SQL
 
