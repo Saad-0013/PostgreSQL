@@ -1,2 +1,3 @@
-# PostgreSQL
-Repository to learn PSQL
+# SQL Notes / Cheat Sheet
+Repository to learn SQL
+Notes for SQL
