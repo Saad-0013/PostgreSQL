@@ -269,6 +269,55 @@ FROM films,
 GROUP BY release_year;
 ```
 
+```SQL
+SELECT country, release_year, min(gross)
+FROM films
+GROUP BY release_year, country
+ORDER BY country, release_year;
+```
+
+### The HAVING keyword
+
+<b>Invalid Code</b>
+
+```SQL
+SELECT release_year
+FROM films
+GROUP BY release_year
+WHERE COUNT(title) > 10;
+```
+
+<b>Valid Code</b>
+
+```SQL
+SELECT release_year
+FROM films
+GROUP BY release_year
+HAVING COUNT(title) > 10;
+```
+
+```SQL
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000;
+```
+
+# Advanced SQL
+
+### JOINS
+
+<b>Sample Code</b>
+
+```SQL
+SELECT title, imdb_score
+FROM films
+JOIN reviews
+ON films.id = reviews.film_id
+WHERE title = 'To Kill a Mockingbird';
+```
+
 
 # Notes about SQL  
 
@@ -294,6 +343,20 @@ from table_name;
 If you want more precision when dividing, you can add decimal places to your numbers. For example,
 ```SQL 
 SELECT (4.0 / 3.0) AS result;
+```
+
+5. The <b>GROUP BY</b> clause is used before the <b>ORDER BY</b> clause.
+6. Use <b>ORDER BY</b> clause after the <b>HAVING</b> clause.
+
+<b><u>Example Code</u></b>
+
+```SQL
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000
+ORDER BY avg(gross) DESC;
 ```
 
 
