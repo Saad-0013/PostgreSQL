@@ -242,6 +242,34 @@ FROM people
 ORDER BY birthdate ASC;
 ```
 
+#### Sorting multiple columns 
+
+We can use ORDER BY with multiple columns, for example
+```SQL
+SELECT name, birthdate 
+FROM people 
+ORDER BY birthdate, name;
+```
+
+### The GROUP BY funtion
+
+GROUP BY is used with various aggregate functions sunch as count and max etc.
+<u>Application:</u> you may want to count the number of male and female workers that are employed by your company.
+<u>CODE:</u>
+
+```SQL
+SELECT gender, COUNT(*)
+FROM employees
+GROUP BY gender;
+```
+
+```SQL
+SELECT release_year, COUNT(*)
+FROM films,
+GROUP BY release_year;
+```
+
+
 # Notes about SQL  
 
 1. SQL stand for Structured Query Language 
