@@ -166,6 +166,32 @@ FROM table
 WHERE birthdate IS NULL;
 ``` 
 
+### More on the AS keyword
+```SQL
+SELECT MAX(budget), MAX(duration)
+FROM films;
+```
+
+Well, Now you have two columns named max, which isn't very useful!
+
+To avoid situations like this, SQL allows you to do something called aliasing. Aliasing simply means you assign a temporary name to something. To alias, you use the AS keyword, which you've already seen earlier in this course.
+
+For example, in the above example we could use aliases to make the result clearer:
+
+```SQL
+SELECT MAX(budget) AS max_budget,
+       MAX(duration) AS max_duration
+FROM films;
+```
+
+Aliases are helpful for making results more readable!
+
+```SQL
+SELECT title, (gross-budget) AS net_profit
+FROM films;
+```
+
+
 ### The LIKE and NOT LIKE keywords
 
 1. In SQL, the LIKE operator can be used in a WHERE clause to search for a pattern in a column. To accomplish this, you use something called a wildcard as a placeholder for some other values. There are two wildcards you can use with LIKE:
@@ -202,29 +228,18 @@ Aggregate Functions include:
 - MIN - Minimum
 - SUM - Summation
 
-## More on the AS keyword
+
+### ORDER BY
+
 ```SQL
-SELECT MAX(budget), MAX(duration)
-FROM films;
+SELECT name FROM people
+ORDER BY name;
 ```
 
-Well, Now you have two columns named max, which isn't very useful!
-
-To avoid situations like this, SQL allows you to do something called aliasing. Aliasing simply means you assign a temporary name to something. To alias, you use the AS keyword, which you've already seen earlier in this course.
-
-For example, in the above example we could use aliases to make the result clearer:
-
 ```SQL
-SELECT MAX(budget) AS max_budget,
-       MAX(duration) AS max_duration
-FROM films;
-```
-
-Aliases are helpful for making results more readable!
-
-```SQL
-SELECT title, (gross-budget) AS net_profit
-FROM films;
+SELECT name, birthdate
+FROM people
+ORDER BY birthdate ASC;
 ```
 
 # Notes about SQL  
