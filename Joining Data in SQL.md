@@ -1,3 +1,7 @@
 # Joining Data in SQL
 
-image.png
+We Have two tables, denoted by the labels left and right.
+
+   Left              Right
+[Id | Data]       [Id| Data]
+
