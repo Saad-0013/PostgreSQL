@@ -1,5 +1,4 @@
 # SQL Notes / Cheat Sheet
-Repository to learn SQL
 
 <h2>
     <ol>
