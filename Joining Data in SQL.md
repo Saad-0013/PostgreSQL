@@ -2,6 +2,6 @@
 
 We Have two tables, denoted by the labels left and right.
 
-   Left              Right
+   Left              Right<br>
 [Id | Data]       [Id| Data]
 
