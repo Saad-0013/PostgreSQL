@@ -81,9 +81,25 @@ FROM table_name
 ORDER BY year_group;
 ```
 
+## Creating a new table using the INTO keyword
 
+The INTO keyword takes the results of the query and puts them into a new-seperate table.
+```SQL
+SELECT country_code, size,
+  CASE WHEN size > 50000000
+            THEN 'large'
+       WHEN size > 1000000
+            THEN 'medium'
+       ELSE 'small' END
+       AS popsize_group
+INTO pop_plus       
+FROM populations
+WHERE year = 2015;
+```
 
-### Sample Code
+The INTO keyword comes before FROM.
+
+# Sample Code Snippets
 
 ```SQL
 SELECT  left_table.id AS L_id,
@@ -94,5 +110,24 @@ FROM left_table
 INNER JOIN right_table
 USING (id);
 ```
+
+## The OUTER JOIN
+
+### Types of OUTER JOINS
+
+1. LEFT JOIN
+2. RIGHT JOIN
+3. FULL JOIN
+
+### The LEFT JOIN
+
+Consider the INNER JOIN 
+It displays the output table with matching keys in both the tables.
+Now the LEFT JOIN keeps track of the entries in the left table that do not match with the ones in the right.
+
+A LEFT JOIN keeps all the values in the left table but marks them missing for the corresponding right values that don't have a match.
+
+![image](Images/Left_Join.png)
+
        
 
