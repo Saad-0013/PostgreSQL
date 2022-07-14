@@ -127,7 +127,7 @@ Now the LEFT JOIN keeps track of the entries in the left table that do not match
 
 A LEFT JOIN keeps all the values in the left table but marks them missing for the corresponding right values that don't have a match.
 
-![title](Images/Left_Join.png)
+![title](./Images/Left_Join.PNG)
 
 
        
