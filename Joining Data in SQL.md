@@ -129,6 +129,48 @@ A LEFT JOIN keeps all the values in the left table but marks them missing for th
 
 ![title](./Images/Left_Join.PNG)
 
+One left table value may also map to multiple values in the right table as shown below
+
+![title](./Images/Multiple_Values.PNG)
+
+## Syntax
+
+```SQL
+SELECT p1.country, prime_minister, persident,
+FROM prime_ministers as p1
+LEFT JOIN presidents as p2
+ON p1.country = p2.country;
+```
+
+
+
+### The RIGHT JOIN
+
+In SQL the Right table appears after the RIGHT JOIN clause and the left table appears after the FROM clause.
+
+![title](./Images/Right_Join.PNG)
+
+### Syntax
+
+```SQL
+SELECT right_table.id as r_id,
+       left_table.id as l_id,
+       right_table.val as r_val
+FROM left_table AS left
+RIGHT JOIN right_table AS right
+ON left_table.id = right_table.id;
+```
+
+### The FULL JOIN
+
+It 
+
+![title](./Images/Full_Join.PNG)
+
+
+
+
+
 
        
 
