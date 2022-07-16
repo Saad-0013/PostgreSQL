@@ -191,6 +191,62 @@ CROSS JOIN table_two
 WHERE region IN ('Pakistan', 'Qatar');
 ```
 
+## Set Theory
+
+### 1. Union 
+Everything in both the tables, without duplication of the common items
+
+```SQL
+SELECT prime_minister as leader, country
+FROM prime_ministers
+UNION
+SELECT monarch, country
+FROM monarchs
+ORDER BY country;
+```
+
+### 2. Union All
+Everything in both the tables, with the duplication of the common items
+
+```SQL
+SELECT prime_minister as leader, country
+FROM prime_ministers
+UNION ALL
+SELECT monarch, country
+FROM monarchs
+ORDER BY country;
+```
+
+### 3. Intersect
+Only the common items in both the tables
+
+```SQL
+SELECT id 
+FROM left
+INTERSECT
+SELECT id 
+FROM right;
+```
+#### Intersecting on two columns
+
+```SQL
+SELECT name, id
+FROM left
+INTERSECT 
+SELECT name, id
+FROM right;
+```
+
+```INTERSECT``` looks for records in common not individual key fields like a ```JOIN``` does.
+
+### 4. Except
+Everything in one table but NOT in the other table
+
+![title](./Images/Set_Theory.PNG)
+
+
+
+
 
 
 
