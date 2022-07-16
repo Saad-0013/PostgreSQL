@@ -113,7 +113,7 @@ USING (id);
 
 ## The OUTER JOIN
 
-### Types of OUTER JOINS
+#### Types of OUTER JOINS
 
 1. LEFT JOIN
 2. RIGHT JOIN
@@ -133,7 +133,7 @@ One left table value may also map to multiple values in the right table as shown
 
 ![title](./Images/Multiple_Values.PNG)
 
-## Syntax
+#### Syntax
 
 ```SQL
 SELECT p1.country, prime_minister, persident,
@@ -150,7 +150,7 @@ In SQL the Right table appears after the RIGHT JOIN clause and the left table ap
 
 ![title](./Images/Right_Join.PNG)
 
-### Syntax
+#### Syntax
 
 ```SQL
 SELECT right_table.id as r_id,
@@ -163,9 +163,36 @@ ON left_table.id = right_table.id;
 
 ### The FULL JOIN
 
-It 
+It brings the entire data from both the tables.
 
+#### Syntax
+
+```SQL
+SELECT left_table.id AS l_id, right_table.id as r_id, left_table.val as l_val, right_table.val as r_val
+FROM left_table
+FULL JOIN right_table
+USING (id);
+```
 ![title](./Images/Full_Join.PNG)
+
+### The CROSS JOIN 
+
+The CROSS JOIN takes two tables as an input and outputs a table that consists of all possible combinations of the data values in the two input tables.
+
+Since the output table is a table containing all the possible combinations, we do not need to specify a joining attribute.
+
+
+![title](./Images/Cross_Join.PNG)
+
+```SQL
+SELECT name, country, region 
+FROM table_one
+CROSS JOIN table_two
+WHERE region IN ('Pakistan', 'Qatar');
+```
+
+
+
 
 
 
