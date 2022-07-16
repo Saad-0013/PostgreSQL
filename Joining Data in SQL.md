@@ -242,9 +242,67 @@ FROM right;
 ### 4. Except
 Everything in one table but NOT in the other table
 
+Items in A that are not in B.
+```SQL
+SELECT monarch 
+FROM monarchs
+EXCEPT
+SELECT prime_minister
+FROM prime_ministers;
+```
+
 ![title](./Images/Set_Theory.PNG)
 
+## Summary 
 
+All the 6 joins previously stated are called additive columns. They add columns to the left table
+<ol>
+  <li>INNER JOIN</li>
+  <li>SELF JOIN</li>
+  <li>CROSS JOIN</li>
+  <li>LEFT JOIN</li>
+  <li>RIGHT JOIN</li>
+  <li>FULL JOIN</li>
+</ol>
+
+## SEMI JOINS
+
+A ```SEMI JOIN``` chooses records from the first table where the condition is met in the second table.
+
+```SQL
+SELECT president, country, continent
+FROM presidents
+WHERE countr IN
+   (SELECT name 
+    FROM states
+    WHERE indep_year < 1800);
+```
+
+```SQL
+SELECT DISTINCT name 
+FROM languages 
+WHERE languages.code IN 
+  (SELECT code
+   FROM countries
+   WHERE region = 'Middle East')
+ORDER by name;
+```
+
+## ANTI JOINS
+
+An ```ANTI JOIN``` chooses records from the first table where the condition is not met in the second table.
+
+```SQL
+SELECT president, country, continent 
+FROM presidents
+WHERE continent LIKE '%AMERICA' 
+   AND country NOT IN 
+     (SELECT name
+     FROM countries
+      where indep_year < 1800)
+```
+
+![title](./Images/Semi_Anti_Join.PNG)
 
 
 
