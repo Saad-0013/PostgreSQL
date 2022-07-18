@@ -304,6 +304,93 @@ WHERE continent LIKE '%AMERICA'
 
 ![title](./Images/Semi_Anti_Join.PNG)
 
+# More Sample Code
+
+```SQL
+SELECT name
+  FROM cities AS c1
+  WHERE c1.country_code IN
+(
+    SELECT e.code
+    FROM economies AS e
+
+    UNION
+
+    SELECT c2.code
+    FROM currencies as c2
+
+    EXCEPT
+
+    SELECT p.country_code
+    FROM populations AS p
+);
+```
+
+# Nested Queries
+
+## Nested queries with the WHERE clause
+```SQL
+SELECT name, fert_rate
+FROM states
+WHERE continent = 'Asia'
+   AND fert_rate < 
+     (
+        SELECT AVG(fert_rate)
+        FROM states
+     );
+```
+
+## Nested queries with the SELECT clause
+```SQL
+SELECT DISTINCT continent,
+   (
+    SELECT COUNT(*)
+    FROM states
+    WHERE prime_ministers.continent = states.continent
+   ) AS countries_num
+FROM prime_ministers;
+```
+
+<b>Output</b><br>
+
+![title](./Images/output.PNG)
+
+## Nested queries inside the FROM clause
+
+```SQL
+SELECT DISTINCT monarchs.continent, subquerry.max_perc
+FROM monarchs, 
+   (
+    SELECT continent, MAX(woman_parli_perc) AS max_perc
+    FROM states
+    GROUP BY contient
+   ) AS subquery
+WHERE monarchs.continent = subquery.continent
+ORDER BY continent;
+```
+
+### Important to note
+
+Observe the code below
+
+```SQL
+SELECT local_name, lang_num
+  FROM countries,
+  	(SELECT code, COUNT(*) AS lang_num
+  	 FROM languages
+  	 GROUP BY code) AS subquery
+  WHERE countries.code = subquery.code
+ORDER BY lang_num DESC;
+```
+
+In order to get the ```lang_num``` column in the subquery, we have to include the column name, i.e. ```lang_num``` in the main/outer ```SELECT``` clause, so that it may appear in the final output table.
+
+
+
+
+
+
+
 
 
 
